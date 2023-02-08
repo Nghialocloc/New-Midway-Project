@@ -121,8 +121,8 @@ def update_board(window, dark, light, game_board):
 class Controller:
     def __init__(self, opening_book):
         # Default chess_board colours and theme
-        self.depth = 4
-        self.is_timer_on = True
+        self.depth = 3
+        self.is_timer_on = False
         self.is_player_white = True
         self.pregame = True
         self.menu_element, self.board_array = None, None
@@ -278,7 +278,8 @@ class Controller:
                 new_game = game.Game(chess_board, window, self.is_player_white, self.opening_book,
                                      self.algorithm, self.board_array, self.depth, self.is_timer_on,
                                      self.dark_sq_colour, self.light_sq_colour)  # initialize game
-                new_game.game_controller()                                       # Begin game loop
+                # Begin game loop
+                new_game.game_controller()
 
                 # Reset elements after game
                 self.is_player_white, self.pregame = True, True         # Reset colours and game state

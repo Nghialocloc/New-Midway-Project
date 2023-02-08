@@ -269,7 +269,7 @@ class Game:
         """
         #if (current_piece == constants.PAWN_W or current_piece == constants.PAWN_B) and origin_row == 1:
         #   move_str = str(move)
-        #    self.move_promotion(window, move_str, player)
+        #   self.move_promotion(window, move_str, player)
         #else :
         if board.is_castling(move):                                              # Check if move is Castling
             move_str = str(move)
@@ -437,15 +437,24 @@ class Game:
         self.setup_game()
 
         # Game loop
-        while not self.chess_board.is_game_over(claim_draw=True) and not is_exit_game and timer_player.run_out == False:
-            if is_human_turn:        # If player turn: Get PLAYER move
-                is_human_turn, move_count, is_exit_game = self.player_move(self.window, self.chess_board, move_count,
-                                                                           timer_player, timer_engine)
-            elif not is_human_turn:  # If engine turn: Get ENGINE move
-                is_human_turn, move_count, is_exit_game = self.engine_move(self.window, self.chess_board, move_count,
-                                                                           timer_player, timer_engine)
+        if self.is_timer_on == True : 
+            while not self.chess_board.is_game_over(claim_draw=True) and not is_exit_game and timer_player.run_out == False:
+                if is_human_turn:        # If player turn: Get PLAYER move
+                    is_human_turn, move_count, is_exit_game = self.player_move(self.window, self.chess_board, move_count,
+                                                                               timer_player, timer_engine)
+                elif not is_human_turn:  # If engine turn: Get ENGINE move
+                    is_human_turn, move_count, is_exit_game = self.engine_move(self.window, self.chess_board, move_count,
+                                                                               timer_player, timer_engine)
+        else :       
+            while not self.chess_board.is_game_over(claim_draw=True) and not is_exit_game:
+                if is_human_turn:        # If player turn: Get PLAYER move
+                    is_human_turn, move_count, is_exit_game = self.player_move(self.window, self.chess_board, move_count,
+                                                                               timer_player, timer_engine)
+                elif not is_human_turn:  # If engine turn: Get ENGINE move
+                    is_human_turn, move_count, is_exit_game = self.engine_move(self.window, self.chess_board, move_count,
+                                                                            timer_player, timer_engine)
 
-        if timer_player.run_out == True and timer_player.base <= 0:
+        if timer_player.run_out == True and timer_player.base <= 0 and self.is_timer_on == True:
             self.chess_board.is_game_over = True 
             is_exit_game = True
             result = 'Engine Wins!'

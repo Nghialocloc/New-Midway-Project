@@ -131,7 +131,7 @@ class ConcreteGUI:
 
         window = sg.Window(constants.WINDOW_TITLE, layout, default_button_element_size=(100, 1),
                            auto_size_buttons=False, finalize=True, icon=constants.LOGO)  # Create application window
-
+        
         return window, menu_element, self.game_board
 
 
