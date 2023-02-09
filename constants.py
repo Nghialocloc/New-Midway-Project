@@ -14,7 +14,6 @@ DEPTH_LIST = [2, 3, 4, 5]
 PREGAME_MENU_BAR = [['Menu', ['Start Game', ['Play as White', 'Play as Black'], 'Close Application']],
                     ['Algorithm Info. && Settings', ['Custom Game', ['Select Algorithm', 'Change Search Depth',
                                                      'Algorithm Information'], 'Mode', ['Easy', 'Normal', 'Hard', 'Advanced']]],
-                    ['Display Settings', ['Default Theme', 'Select Theme', 'Select Board Colours']],
                     ['Timer Settings', ['Timer Settings']],
                     ['Help && Info', ['Help && Info']]]
 STATE_PREGAME = "Pre-Game - Ready!"
@@ -129,8 +128,8 @@ INFO_STR = 'Phần mềm này cung cấp 4 thuật toán tìm kiếm theo mức 
 HELP_STR_INIT = 'Chào mừng tới “BeatMyChessAI”, một phần mềm được thiết kế để cho phép bạn thử sức với các ' \
               'thuật toán tìm kiếm mạnh mẽ. Để bắt đầu ván cờ, chỉ cần bấm nút Menu ở trên thanh cửa sổ và tiếp theo ' \
               'là bấm nút Start Game rồi chọn màu phe của bạn. ' \
-              '\n\nĐể đổi màu theme của phần mềm, bạn có thể vào phần Display Settings rồi vào chọn Select theme và ' \
-              'chọn màu bạn muốn. Bàn cờ cũng có 2 màu khác nhau để chọn trong phần Select broad theme.' \
+              '\n\nĐể đổi độ khó của phần mềm, bạn có thể vào phần Mode rồi vào chọn chế độ bạn muốn. ' \
+              'Bạn cũng có thể tùy chỉnh kĩ càng độ khó hơn với Custom Game cho phù hợp hơn.' \
               '\n\nBạn có 2 cách để điều chỉnh độ khó cho ván cờ cho vừa với sức mình : ' \
               '\n    Depth: độ sâu của thuật toán càng nông thì càng ít phép tính mà thuật toán cần phải thực hiện,'\
               'từ đó hiệu quả của thuật toán cũng sẽ giảm' \
