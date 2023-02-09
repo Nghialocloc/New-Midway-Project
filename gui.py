@@ -144,6 +144,7 @@ class Controller:
         else:  # Else, if turn is black:
             window['el_user_colour']('Black')
             window['el_engine_colour']('White')  # Swap GUI 'White' and 'Black' text
+            self.is_player_white = False
 
     def check_menu_buttons(self, button, window):
         """

@@ -205,34 +205,55 @@ class Game:
                                                   constants.HIGHLIGHT_LIGHT)  # Get colour
                 new_elem.Update(button_color=('black', colour))             # Update colour of button
 
-    def move_castling(self, window, current_move, turn):
+    def move_castling(self, window, current_move):
         """
         Implements front-end Castling.
         :param window: app window.
         :param current_move: move made.
         :param turn: Engine or Player turn.
         """
-        is_white = True if self.is_player_white and turn == 'player' else False
-        if current_move == 'e1g1' or current_move == 'e1h1':                                # Player King-side
-            self.board_array[7][7] = constants.BLANK                                         # Clear Rook
-            self.board_array[7][4] = constants.BLANK                                         # Clear King
-            self.board_array[7][5] = constants.ROOK_W if is_white else constants.ROOK_B      # Set Rook
-            self.board_array[7][6] = constants.KING_W if is_white else constants.KING_B      # Set King
-        elif current_move == 'e1a1' or current_move == 'e1c1':                              # Player Queen-side
-            self.board_array[7][0] = constants.BLANK                                         # Clear Rook
-            self.board_array[7][4] = constants.BLANK                                         # Clear King
-            self.board_array[7][3] = constants.ROOK_W if is_white else constants.ROOK_B      # Set Rook
-            self.board_array[7][2] = constants.KING_W if is_white else constants.KING_B      # Set King
-        elif current_move == 'e8g8' or current_move == 'e8h8':                              # Engine King-side
-            self.board_array[0][7] = constants.BLANK                                         # Clear Rook
-            self.board_array[0][4] = constants.BLANK                                         # Clear King
-            self.board_array[0][5] = constants.ROOK_B if is_white else constants.ROOK_B      # Set Rook
-            self.board_array[0][6] = constants.KING_W if is_white else constants.KING_B      # Set King
-        elif current_move == 'e8a8' or current_move == 'e8c8':                              # Engine Queen-side
-            self.board_array[0][0] = constants.BLANK                                         # Clear Rook
-            self.board_array[0][4] = constants.BLANK                                         # Clear King
-            self.board_array[0][3] = constants.ROOK_W if is_white else constants.ROOK_B      # Set Rook
-            self.board_array[0][2] = constants.KING_W if is_white else constants.KING_B      # Set King
+
+        if current_move == 'e1g1' or current_move == 'e1h1':        # Player King-side
+            self.board_array[7][7] = constants.BLANK                # Clear Rook
+            self.board_array[7][4] = constants.BLANK                # Clear King
+            self.board_array[7][5] = constants.ROOK_W               # Set Rook
+            self.board_array[7][6] = constants.KING_W               # Set King
+        elif current_move == 'e1a1' or current_move == 'e1c1':      # Player Queen-side
+            self.board_array[7][0] = constants.BLANK                # Clear Rook
+            self.board_array[7][4] = constants.BLANK                # Clear King
+            self.board_array[7][3] = constants.ROOK_W               # Set Rook
+            self.board_array[7][2] = constants.KING_W               # Set King
+        elif current_move == 'e8g8' or current_move == 'e8h8':      # Engine King-side
+            self.board_array[0][7] = constants.BLANK                # Clear Rook
+            self.board_array[0][4] = constants.BLANK                # Clear King
+            self.board_array[0][5] = constants.ROOK_B               # Set Rook
+            self.board_array[0][6] = constants.KING_B               # Set King
+        elif current_move == 'e8a8' or current_move == 'e8c8':      # Engine Queen-side
+            self.board_array[0][0] = constants.BLANK                # Clear Rook
+            self.board_array[0][4] = constants.BLANK                # Clear King
+            self.board_array[0][3] = constants.ROOK_B               # Set Rook
+            self.board_array[0][2] = constants.KING_B               # Set King
+        elif current_move == 'd1g1' or current_move == 'd1h1':      # Player King-side
+            self.board_array[7][7] = constants.BLANK                # Clear Rook
+            self.board_array[7][4] = constants.BLANK                # Clear King
+            self.board_array[7][5] = constants.ROOK_B               # Set Rook
+            self.board_array[7][6] = constants.KING_B               # Set King
+        elif current_move == 'd1a1' or current_move == 'd1c1':      # Player Queen-side
+            self.board_array[7][0] = constants.BLANK                # Clear Rook
+            self.board_array[7][4] = constants.BLANK                # Clear King
+            self.board_array[7][3] = constants.ROOK_B               # Set Rook
+            self.board_array[7][2] = constants.KING_B               # Set King
+        elif current_move == 'd8g8' or current_move == 'd8h8':      # Engine King-side
+            self.board_array[0][7] = constants.BLANK                # Clear Rook
+            self.board_array[0][4] = constants.BLANK                # Clear King
+            self.board_array[0][5] = constants.ROOK_W               # Set Rook
+            self.board_array[0][6] = constants.KING_W               # Set King
+        elif current_move == 'd8a8' or current_move == 'd8c8':      # Engine Queen-side
+            self.board_array[0][0] = constants.BLANK                # Clear Rook
+            self.board_array[0][4] = constants.BLANK                # Clear King
+            self.board_array[0][3] = constants.ROOK_W               # Set Rook
+            self.board_array[0][2] = constants.KING_W               # Set King
+
         gui.update_board(window, self.dark_sq, self.light_sq, self.board_array)              # Draw Changes            
 
     def move_promotion(self, window, current_move, turn):
@@ -268,12 +289,12 @@ class Game:
         Handles the move for each competitor and acts accordingly.
         """
         #if (current_piece == constants.PAWN_W or current_piece == constants.PAWN_B) and origin_row == 1:
-        #   move_str = str(move)
+        #    move_str = str(move)
         #    self.move_promotion(window, move_str, player)
         #else :
         if board.is_castling(move):                                              # Check if move is Castling
             move_str = str(move)
-            self.move_castling(window, move_str, player)                         # Call function to implement Castling
+            self.move_castling(window, move_str)                                 # Call function to implement Castling
         else:                                                                    # Else if normal move:
             self.board_array[original_sq[0]][original_sq[1]] = constants.BLANK   # Clear original square [row,col]
             self.board_array[new_sq[0]][new_sq[1]] = current_piece               # Update new square [row, col]

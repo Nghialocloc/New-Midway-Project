@@ -4,7 +4,7 @@ import os
 Stores all the constants throughout the software.
 """
 
-WINDOW_TITLE = 'Beat My Chess AI'
+WINDOW_TITLE = 'Chess Test AI'
 LOGO = 'Images/logo.ico'
 
 ALGORITHM_LIST = ['NegaMax', 'NegaMax & Alpha-Beta', 'NegaScout & Quiesce', 'MTD(f) - Main']
@@ -125,7 +125,7 @@ INFO_STR = 'Phần mềm này cung cấp 4 thuật toán tìm kiếm theo mức 
            '\ntoán vẫn gặp vấn đề ở depth 5. Vì thế, để có hiệu quả tốt nhất , hãy thiết lập thuật toán ở depth 4'\
            '\n\nThuật toán này tương đương mức nâng cao của phần mềm ' \
 
-HELP_STR_INIT = 'Chào mừng tới “BeatMyChessAI”, một phần mềm được thiết kế để cho phép bạn thử sức với các ' \
+HELP_STR_INIT = 'Chào mừng tới “Chess Test AI”, một phần mềm được thiết kế để cho phép bạn thử sức với các ' \
               'thuật toán tìm kiếm mạnh mẽ. Để bắt đầu ván cờ, chỉ cần bấm nút Menu ở trên thanh cửa sổ và tiếp theo ' \
               'là bấm nút Start Game rồi chọn màu phe của bạn. ' \
               '\n\nĐể đổi độ khó của phần mềm, bạn có thể vào phần Mode rồi vào chọn chế độ bạn muốn. ' \
@@ -137,7 +137,7 @@ HELP_STR_INIT = 'Chào mừng tới “BeatMyChessAI”, một phần mềm đư
               'hướng dẫn chọn các thuật toán ở Algorithm Info' \
               '\n\nBạn cũng có thể tắt bộ đếm giờ để trải nghiệm ván cờ bớt căng thẳng hơn ở Timer Settings.\n'
 
-HELP_STR_INGAME = 'Chào mừng tới “BeatMyChessAI”, một phần mềm được thiết kế để cho phép bạn thử sức với các ' \
+HELP_STR_INGAME = 'Chào mừng tới “Chess Test AI”, một phần mềm được thiết kế để cho phép bạn thử sức với các ' \
               'thuật toán tìm kiếm mạnh mẽ' \
               '\n\nGiờ bạn đang ở trong một ván đánh với một trong các thuật toán!' \
               '\nĐể thực hiện nước đi theo ý mình, đầu tiên bấm vào quân cờ bạn muốn đi và bạn sẽ thấy các nước đi quân cờ đó có thể đi sẽ được đánh dấu màu. ' \
