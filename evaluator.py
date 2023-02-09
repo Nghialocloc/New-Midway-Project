@@ -56,11 +56,3 @@ def evaluator(board, result):
 
     return evaluation if board.turn else -evaluation
 
-
-"""
-Gaikwad, A. (2020). Let’s create a Chess AI. [ONLINE] Medium.
-Available at: https://medium.com/dscvitpune/lets-create-a-chess-ai-8542a12afef. [Accessed 25 May. 2021].
-This source provided the basis for the evaluation functions.
-This was an area where only a basic evaluator was required that could function across multiple algorithms,
-with this being an ideal example to use as a foundation.
-"""

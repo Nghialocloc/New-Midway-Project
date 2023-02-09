@@ -157,9 +157,6 @@ class Controller:
             window.Close()                                         # Close app window.
             sys.exit(0)                                            # Stop program.
 
-        if button == 'Preview Themes':                          # If turn clicks 'Preview Themes'
-            sg.theme_previewer(columns=7, scrollable=True)      # Open dialog to display theme previewer
-
         if button == 'Timer Settings':                          # If turn selects the timer settings menu option:
             buttons, values = sg.Window('Timer Settings',       # Create popup window for timer settings
                                         [[sg.Checkbox('Enable Timer?', default=self.is_timer_on,
@@ -203,10 +200,29 @@ class Controller:
                 self.algorithm = values['algorithm_select']
                 window['el_algorithm'](self.algorithm)
 
-        if button == 'Default Algorithm':
-            self.algorithm = 'MTD(f) - Main'
-            window['el_algorithm'](self.algorithm)
+        if button == 'Easy':
+            self.algorithm = 'NegaMax'
+            self.depth = 2
+            window['el_algorithm']('Easy')
+            window['el_depth']('')
+        
+        if button == 'Normal':
+            self.algorithm = 'NegaMax & Alpha-Beta'
+            self.depth = 3
+            window['el_algorithm']('Normal')
+            window['el_depth']('')
 
+        if button == 'Hard':
+            self.algorithm = 'NegaScout & Quiesce'
+            self.depth = 3
+            window['el_algorithm']('Hard')
+            window['el_depth']('')
+
+        if button == 'Advanced':
+            self.algorithm = 'MTD(f) - Main'
+            self.depth = 3
+            window['el_algorithm']('Advanced')
+            window['el_depth']('')
         if button == 'Algorithm Information':
             sg.Window('Search Algorithms',
                       [[sg.Text(constants.INFO_STR)],
@@ -278,8 +294,7 @@ class Controller:
                 new_game = game.Game(chess_board, window, self.is_player_white, self.opening_book,
                                      self.algorithm, self.board_array, self.depth, self.is_timer_on,
                                      self.dark_sq_colour, self.light_sq_colour)  # initialize game
-                # Begin game loop
-                new_game.game_controller()
+                new_game.game_controller()                                       # Begin game loop
 
                 # Reset elements after game
                 self.is_player_white, self.pregame = True, True         # Reset colours and game state
@@ -290,10 +305,3 @@ class Controller:
         window.Close()  # Close window when exiting system
 
 
-"""
-fsmosca (2021). fsmosca/Python-Easy-Chess-GUI. [ONLINE] GitHub.
-Available at: https://github.com/fsmosca/Python-Easy-Chess-GUI [Accessed 13 Apr. 2021].
-This source provided detailed information for the implementation of a simple chess GUI
-utilizing PySimpleGUI that links to python chess for gameplay.
-This aligned perfectly with the desired requirements for this software and so formed a good foundation and resource.
-"""

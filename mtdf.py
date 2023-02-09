@@ -160,18 +160,5 @@ class MTDfEngine(object):
         return move
 
 
-"""
-Ramachandran, A. (2020). JHurricane96/chessai. [ONLINE] GitHub.
-Available at: https://github.com/JHurricane96/chessai [Accessed 13 Apr. 2021].
-This source provided working examples of several of the desired
-functionalities for the MTD(f) algorithm, including Transposition Tables.
 
-Elnaggar, A., Aziem, M., Gadallah, M., and El-Deeb, H., (2014).
-A Comparative Study of Game Tree Searching Methods.
-International Journal of Advanced Computer Science and Applications, 5(5). [ONLINE]
-Available at: https://www.researchgate.net/publication/262672371_A_Comparative_Study_of_Game_Tree_Searching_Methods.
-[Accessed 21 Feb. 2021].
-This research paper provided excellent resources for all the algorithms used in the software.
-The pseudocode provided formed the basis of all four chess algorithms.
-"""
 

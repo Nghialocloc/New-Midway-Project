@@ -105,18 +105,3 @@ class NegamaxEngine:
         return best_move
 
 
-"""
-Gaikwad, A. (2020). Let’s create a Chess AI. [ONLINE] Medium.
-Available at: https://medium.com/dscvitpune/lets-create-a-chess-ai-8542a12afef. [Accessed 25 May. 2021].
-This source provided the basis for the evaluation functions.
-This was an area where only a basic evaluator was required that could function across multiple algorithms,
-with this being an ideal example to use as a foundation.
-    
-Elnaggar, A., Aziem, M., Gadallah, M., and El-Deeb, H., (2014).
-A Comparative Study of Game Tree Searching Methods.
-International Journal of Advanced Computer Science and Applications, 5(5). [ONLINE]
-Available at: https://www.researchgate.net/publication/262672371_A_Comparative_Study_of_Game_Tree_Searching_Methods.
-[Accessed 21 Feb. 2021].
-This research paper provided excellent resources for all the algorithms used in the software.
-The pseudocode provided formed the basis of all four chess algorithms.
-"""

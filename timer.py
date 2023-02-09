@@ -1,5 +1,3 @@
-import concretegui
-
 def get_timer(time_y):
     # Returns timer
     s, ms = divmod(int(time_y), 1000)
@@ -12,8 +10,6 @@ class Timer:
     """
     def __init__(self):
         self.base = 5 * 60 * 1000             # 5 minutes in ms
-        
-        
         self.inc = 10000                      # increment time in ms (10 sec)
         self.elapsed = 0
         self.run_out = False

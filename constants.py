@@ -12,8 +12,8 @@ DEPTH_LIST = [2, 3, 4, 5]
 
 # State 1: Pre-Game. GUI elements outside of in-game.
 PREGAME_MENU_BAR = [['Menu', ['Start Game', ['Play as White', 'Play as Black'], 'Close Application']],
-                    ['Algorithm Info. && Settings', ['Select Algorithm', 'Default Algorithm', 'Change Search Depth',
-                                                     'Algorithm Information']],
+                    ['Algorithm Info. && Settings', ['Custom Game', ['Select Algorithm', 'Change Search Depth',
+                                                     'Algorithm Information'], 'Mode', ['Easy', 'Normal', 'Hard', 'Advanced']]],
                     ['Display Settings', ['Default Theme', 'Select Theme', 'Select Board Colours']],
                     ['Timer Settings', ['Timer Settings']],
                     ['Help && Info', ['Help && Info']]]
@@ -118,13 +118,13 @@ INFO_STR = 'Phần mềm này cung cấp 4 thuật toán tìm kiếm theo mức 
            '\n- horizon effect, bằng cách thực hiện các tìm kiếm ở một nhánh riêng và khác của cây tìm kiếm, nhánh chỉ gồm những quân cờ bị ăn ' \
            '\nhoặc các nước đi chiếu tướng. Tuy tránh được các nước nguy hiểm thuật toán lại kém hiệu quả hơn so với cắt tỉa alpha-beta. Vì thế, ' \
            '\nngười dùng nên để thiết lập depth khi dùng thuật toán này từu 3 trở xuống ' \
-           '\n\nThuật toán này cũng tương đương mức trung bình của phần mềm. Tuy nhiên với cải tiến nó sẽ tránh nhiều nước đánh lỗi nguy hiểm hơn ' \
+           '\n\nThuật toán này cũng tương đương mức khó của phần mềm. Với cải tiến nó sẽ tránh nhiều nước đánh lỗi nguy hiểm hơn ' \
            '\n\nMTD: thuật toán này là chính là phiên bản nâng cấp của thuật toán Negamax với cắt tỉa nhánh alpha-beta, với sự khác biệt là có đặt ra' \
            '\ncác giá trị giới hạn trên và giới hạn dưới được đặt ra để tập hợp các giá trị thực. Đồng thời thuật toán cũng kết hợp cả thuật tìm kiếm ' \
            '\nQuiescence và bảng chuyển vị, kỹ thuật giảm thiểu các phép tính bằng cách ứng dụng cơ chế lưu trữ và thu hồi giá trị và đánh giá bàn cờ. '\
            '\nNhờ tích hợp nhiều thuật toán bổ trợ khác nhau, MTD có thể chạy ở tất cả các depth trong phần mềm. Tuy nhiên, trong một số trường hợp thuật '\
            '\ntoán vẫn gặp vấn đề ở depth 5. Vì thế, để có hiệu quả tốt nhất , hãy thiết lập thuật toán ở depth 4'\
-           '\n\nThuật toán này tương đương mức khó của phần mềm ' \
+           '\n\nThuật toán này tương đương mức nâng cao của phần mềm ' \
 
 HELP_STR_INIT = 'Chào mừng tới “BeatMyChessAI”, một phần mềm được thiết kế để cho phép bạn thử sức với các ' \
               'thuật toán tìm kiếm mạnh mẽ. Để bắt đầu ván cờ, chỉ cần bấm nút Menu ở trên thanh cửa sổ và tiếp theo ' \

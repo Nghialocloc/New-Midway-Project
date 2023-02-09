@@ -48,7 +48,7 @@ class ConcreteGUI:
         menu_element = sg.Menu(constants.PREGAME_MENU_BAR, tearoff=False, background_color='White', text_color='black')
         board_layout = self.build_board(is_player_white)
         sg.theme(self.theme)
-        timer_val = '05m:00s' if self.is_timer_on else u"\u221E"  # Set value dependent on timer settings
+        timer_val = '05m:00s' if self.is_timer_on else u"\u221E"  # Set value dependent on timer settings 22222222222222222222222222222222222222222222222222222222222222222222222222
 
         # Column 1 - Y Axis
         gui_y_axis = [
@@ -131,14 +131,5 @@ class ConcreteGUI:
 
         window = sg.Window(constants.WINDOW_TITLE, layout, default_button_element_size=(100, 1),
                            auto_size_buttons=False, finalize=True, icon=constants.LOGO)  # Create application window
-        
+
         return window, menu_element, self.game_board
-
-
-"""
-fsmosca (2021). fsmosca/Python-Easy-Chess-GUI. [ONLINE] GitHub.
-Available at: https://github.com/fsmosca/Python-Easy-Chess-GUI [Accessed 13 Apr. 2021].
-This source provided detailed information for the implementation of a simple chess GUI
-utilizing PySimpleGUI that links to python chess for gameplay.
-This aligned perfectly with the desired requirements for this software and so formed a good foundation and resource.
-"""

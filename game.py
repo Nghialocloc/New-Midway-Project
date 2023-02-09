@@ -269,7 +269,7 @@ class Game:
         """
         #if (current_piece == constants.PAWN_W or current_piece == constants.PAWN_B) and origin_row == 1:
         #   move_str = str(move)
-        #   self.move_promotion(window, move_str, player)
+        #    self.move_promotion(window, move_str, player)
         #else :
         if board.is_castling(move):                                              # Check if move is Castling
             move_str = str(move)
