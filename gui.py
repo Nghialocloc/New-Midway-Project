@@ -220,7 +220,7 @@ class Controller:
 
         if button == 'Advanced':
             self.algorithm = 'MTD(f) - Main'
-            self.depth = 3
+            self.depth = 4
             window['el_algorithm']('Advanced')
             window['el_depth']('')
         if button == 'Algorithm Information':
