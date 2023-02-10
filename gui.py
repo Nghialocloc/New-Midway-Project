@@ -208,14 +208,14 @@ class Controller:
             window['el_depth']('')
         
         if button == 'Normal':
-            self.algorithm = 'NegaMax & Alpha-Beta'
+            self.algorithm = 'NegaScout & Quiesce'
             self.depth = 3
             window['el_algorithm']('Normal')
             window['el_depth']('')
 
         if button == 'Hard':
-            self.algorithm = 'NegaScout & Quiesce'
-            self.depth = 3
+            self.algorithm = 'NegaMax & Alpha-Beta'
+            self.depth = 4
             window['el_algorithm']('Hard')
             window['el_depth']('')
 
